@@ -58,5 +58,35 @@
     </ul>
 
 
+    <?php
+        define("IVA", 1.21);
+        $cursos=array(
+            array(1, "PHP", "Introducció a PHP", 15.5),
+            array(2, "Laravel", "Laravel per experts", 30),
+            array(3, "Django", "Dominant Django", 10)
+        );
+    ?>
+    <h1><?php echo"Llista de cursos"?></h1>
+    <h2><?php echo"Numero de cursos: ".count($cursos)?></h2>
+
+    <?php
+        for($i=0; $i<count($cursos);$i++){   
+            $n=01
+    ?>
+        <div style="border: 1px solid black;">
+        <h3><?php echo $cursos[$i][$n] ?></h3>
+    <?php
+            $n++;
+    ?>
+        <div><?php echo $cursos[$i][$n] ?></div>
+    <?php
+            $n++;
+    ?>
+        <div><?php echo "El preu del llibre amb IVA: ".$cursos[$i][$n]*IVA ?></div>
+            
+    <?php
+        }
+    ?>   
+    </div>
 </body>
 </html>
