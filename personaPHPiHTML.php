@@ -58,22 +58,28 @@
     </ul>
 
 
+
+
     <?php
-        define("IVA", 1.21);
+        define("IVA", 1.21);  // Constante IVA
+        // Definimos una array y dentro de esta tres mas con la info de cada curso
         $cursos=array(
             array(1, "PHP", "Introducció a PHP", 15.5),
             array(2, "Laravel", "Laravel per experts", 30),
             array(3, "Django", "Dominant Django", 10)
         );
+        $img=array("PHP", "Laravel", "Django");// array con las imagenes
     ?>
     <h1><?php echo"Llista de cursos"?></h1>
     <h2><?php echo"Numero de cursos: ".count($cursos)?></h2>
 
     <?php
+        // Recorremos la array cursos
         for($i=0; $i<count($cursos);$i++){   
             $n=01
     ?>
         <div style="border: 1px solid black;">
+        <div><?php echo "<img src='$img[$i].png' width='100' height='100'> <br>"?></div>
         <h3><?php echo $cursos[$i][$n] ?></h3>
     <?php
             $n++;
