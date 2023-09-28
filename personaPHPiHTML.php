@@ -78,7 +78,7 @@
         for($i=0; $i<count($cursos);$i++){   
             $n=01
     ?>
-        <div style="border: 1px solid black;">
+        <div style="border: 1px solid black; width:250px; height:fit-content">
         <div><?php echo "<img src='$img[$i].png' width='100' height='100'> <br>"?></div>
         <h3><?php echo $cursos[$i][$n] ?></h3>
     <?php
@@ -89,10 +89,10 @@
             $n++;
     ?>
         <div><?php echo "El preu del llibre amb IVA: ".$cursos[$i][$n]*IVA ?></div>
-            
+        </div>
     <?php
         }
     ?>   
-    </div>
+    
 </body>
 </html>
