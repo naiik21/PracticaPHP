@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <ul>
     <?php
         $taules= array(); // Array buida, on es posaran el numero de comensals
         // Afegim a taules un numero random del 0 al 5 (el numero de comensals)
@@ -15,42 +16,36 @@
 
         // Iterem per imprimer la taula amb el nº de comensals
         for($i=0; $i<count($taules); $i++){
+            // Si té 0 comensals
+            if($taules[$i]==0){
     ?>
-            <ul>
+                <li>
+                    <?php echo"La taula ".$i." esta buida"?>
+                </li>
     <?php
-                // Si té 0 comensals
-                if($taules[$i]==0){
+            // Si té 5 comensals
+            }else if($taules[$i]==5){
     ?>
-                    <li>
-                        <?php echo"La taula ".$i." esta buida"?>
-                    </li>
-    <?php
-                // Si té 5 comensals
-                }else if($taules[$i]==5){
-    ?>
-                    <li>
-                        <?php echo"La taula ".$i." esta plena"?>
-                    </li>
+                <li>
+                    <?php echo"La taula ".$i." esta plena"?>
+                </li>
     <?php    
-                // Si té de 1-4 comensals
-                }else{
+            // Si té de 1-4 comensals
+            }else{
     ?>
-                    <li>
-                        <?php echo"La taula ".$i." té ".$taules[$i]." comensals"?>
-                    </li>
+                <li>
+                    <?php echo"La taula ".$i." té ".$taules[$i]." comensals"?>
+                </li>
     <?php            
-                }
-    ?>  
-            </ul>
-    <?php            
-                
-        }
+                }            
+            }
     ?>      
-
+    </ul>
     <br>
     <br>
     <br>
 
+    <ul>
     <?php
         $hotel= array(); // Array buida, on es posaran el numero de plantes, habitacions i persones
         // Afegim a hotel una serie d'arrays que representen les plantes
@@ -66,9 +61,6 @@
         for($i=0; $i<count($hotel); $i++){ 
             // I en l'habitació quantes persones
             for($a=0; $a<count($hotel[$i]); $a++){
-    ?>
-            <ul>
-    <?php
                 // Si té 0 persones
                 if($hotel[$i][$a]==0){
     ?>
@@ -88,19 +80,15 @@
     ?>
                     <li>
                         <?php echo"A l'habitació ".$a." de la planta " .$i." té ".$hotel[$i][$a]." persones"?>
-                    </li>
-                    
+                    </li>     
     <?php            
-                }
-    ?>      
-            </ul>
-    <?php            
-                
-        }
+                }            
+            }
     ?>
         <br>
     <?php
-    }
+        }
     ?>  
+    </ul>
 </body>
 </html>
